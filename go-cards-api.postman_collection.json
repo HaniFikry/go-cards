@@ -1,0 +1,97 @@
+{
+	"info": {
+		"_postman_id": "b4bba38e-c424-4dd0-8b8e-159edec74e41",
+		"name": "go-cards-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create deck",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "{{BASE_URL}}/decks?shuffled=true&cards=AH,10D",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"decks"
+					],
+					"query": [
+						{
+							"key": "shuffled",
+							"value": "true",
+							"description": "Shuffle the deck or not, defaults to false"
+						},
+						{
+							"key": "cards",
+							"value": "AH,10D",
+							"description": "cards to create, defaults to full deck"
+						}
+					]
+				},
+				"description": "Creates a deck of cards"
+			},
+			"response": []
+		},
+		{
+			"name": "Open Deck",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "{{BASE_URL}}/decks/:id",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"decks",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "0a4b6a8e-62a1-491a-a243-9ab19818295d"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Draw a card",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "{{BASE_URL}}/decks/:id/draw?count=1",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"decks",
+						":id",
+						"draw"
+					],
+					"query": [
+						{
+							"key": "count",
+							"value": "1"
+						}
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "0a4b6a8e-62a1-491a-a243-9ab19818295d"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
